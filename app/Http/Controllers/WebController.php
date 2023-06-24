@@ -13,6 +13,9 @@ class WebController extends Controller
 	public function index(){
 		return view('web.index');
 	}
+    public function cotizacionWeb(){
+        return view('web.cotizacion');
+    }
 
 	public function mostrarproducto(){
         $producto=Producto::get();
@@ -202,7 +205,7 @@ class WebController extends Controller
 		        return response()->json('FALSE');
 			}
 				break;
-			
+
 
 			case 'CIELO':
 			try {
@@ -216,7 +219,7 @@ class WebController extends Controller
 			}
 				break;
 
-			
+
 			case 'PISO':
 			try {
 				$view=view('web.parcial.piso',compact('request'))->render();
@@ -229,7 +232,7 @@ class WebController extends Controller
 			}
 				break;
 
-			
+
 			case 'PERSONAL':
 			try {
 				$view=view('web.parcial.personal',compact('request'))->render();
@@ -240,8 +243,8 @@ class WebController extends Controller
 			} catch (Exception $e) {
 		        return response()->json('FALSE');
 			}
-				break;		
-		
+				break;
+
 		}
 	}
 }

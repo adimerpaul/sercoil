@@ -15,6 +15,7 @@
 	return view('auth.login');
 });*/
 Route::get('/', 'WebController@index');
+Route::get('/cotizacionWeb', 'WebController@cotizacionWeb');
 Route::name('web.calcula')->post('web/calcula','WebController@calcula');
 Route::name('web.envia')->post('web/envia','WebController@envia');
 Route::name('web.mostrarproducto')->get('web/mostrarproducto','WebController@mostrarproducto');
@@ -60,7 +61,7 @@ Route::group(['middleware' => 'auth'], function (){
 		Route::resource('categoria','CategoriaController');
 		Route::name('categoria.update')->post('categoria/update','CategoriaController@update');
 	});
-	
+
 	Route::group(['middleware' => ['permission:ingresos']], function() {
 		//------------   INGRESOS  -------
 		Route::resource('ingreso','IngresoController');
@@ -82,7 +83,7 @@ Route::group(['middleware' => 'auth'], function (){
 		Route::name('venta.finaliza')->post('venta/finaliza','VentaController@finaliza');
 
 		Route::name('venta.eliminarproducto')->post('venta/eliminarproducto','VentaController@eliminarproducto');
-		
+
 		Route::name('producto.busca')->post('producto/busca','ProductoController@busca');
 		Route::name('venta.chofer')->post('venta/chofer','VentaController@chofer');
 		Route::name('venta.ubicacion')->post('venta/ubicacion','VentaController@ubicacion');
@@ -94,7 +95,7 @@ Route::group(['middleware' => 'auth'], function (){
 		Route::name('cliente.buscaCedula')->post('cliente/buscaCedula','ClienteController@buscaCedula');
 
 	});
-	
+
 
 	Route::group(['middleware' => ['permission:cotizaciones']], function() {
 		//------------   COTIZACIONES DRYWALL -------
@@ -141,7 +142,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 		Route::name('reporte.fechas')->post('reporte/fechas','ReporteController@reporte_fechas');
 		Route::get('reporte-fechas/{inicio}/{final}', 'ReporteController@fechas');
-		
+
 		Route::name('reporte.clientes')->post('reporte/clientes','ReporteController@reporte_clientes');
 		Route::get('reporte-clientes/{id}', 'ReporteController@clientes');
 
