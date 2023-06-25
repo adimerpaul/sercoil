@@ -16,6 +16,7 @@
 });*/
 Route::get('/', 'WebController@index');
 Route::get('/cotizacionWeb', 'WebController@cotizacionWeb');
+Route::get('/optimizador', 'WebController@optimizador');
 Route::name('web.calcula')->post('web/calcula','WebController@calcula');
 Route::name('web.envia')->post('web/envia','WebController@envia');
 Route::name('web.mostrarproducto')->get('web/mostrarproducto','WebController@mostrarproducto');

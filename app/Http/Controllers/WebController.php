@@ -16,6 +16,9 @@ class WebController extends Controller
     public function cotizacionWeb(){
         return view('web.cotizacion');
     }
+    public function optimizador(){
+        return view('web.optimizador');
+    }
 
 	public function mostrarproducto(){
         $producto=Producto::get();

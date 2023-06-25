@@ -41,7 +41,7 @@
                         <a class="nav-link" href="{{url('/cotizacionWeb')}}">Cotizacion</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Pedido</a>
+                        <a class="nav-link" href="{{url('/optimizador')}}">Optimizador de Cortes </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contactos</a>
