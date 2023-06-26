@@ -167,6 +167,7 @@
 <script src="web/assets1/js/bootstrap.bundle.min.js"></script>
 <script src="web/assets1/js/templatemo.js"></script>
 <script src="web/assets1/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PrintArea/2.4.1/jquery.PrintArea.min.js"></script>
 <!-- End Script -->
 
 <script src="web/assets/js/main.js"></script>
