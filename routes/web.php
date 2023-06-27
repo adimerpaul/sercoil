@@ -152,6 +152,7 @@ Route::group(['middleware' => 'auth'], function (){
 		Route::get('reporte-ingresos/{inicio}/{final}', 'ReporteController@ingresos');
 
 		Route::resource('grafico','GraficoController');
+        Route::resource('corte','CorteController');
 	});
 
 

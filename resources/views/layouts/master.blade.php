@@ -37,7 +37,7 @@
   {!! Html::style('plugins/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') !!}
   <style type="text/css">
     .box-body{
-      margin:30px; margin-top: 0px; 
+      margin:30px; margin-top: 0px;
       margin-bottom: 0px;
     }
     .color-box{
@@ -54,7 +54,7 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="../../index2.html" class="logo">
+      <a href="{{url('/home')}}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -73,9 +73,9 @@
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
-         
+
             <!-- Notifications: style can be found in dropdown.less -->
-         
+
             <!-- Tasks: style can be found in dropdown.less -->
             @if(Auth::user()->can('cotizaciones'))
               <li class="dropdown notifications-menu">
@@ -128,7 +128,7 @@
                   <b> {{Auth::user()->roles()->first()->display_name}}</b>
                 </p>
               </li>
-             
+
               </li>
               <!-- Menu Footer-->
               <li class="user-footer" style="background-color: #064594;">
@@ -170,7 +170,7 @@
         </div>
       </div>
       <!-- search form -->
-     
+
       <!-- /.search form -->
       <style type="text/css">
         .mili{
@@ -204,7 +204,7 @@
         @if(Auth::user()->can('proveedores'))
         <li class="@yield('proveedor')"><a class="mili" href="{{url('/proveedor')}}"><i class="fa fa-truck"></i> PROVEEDORES </a></li>
         @endif
-        
+
         @if(Auth::user()->can('cotizaciones'))
         <li class="treeview @yield('tree_cotizacion')">
           <a class="mili" href="#">
@@ -228,12 +228,12 @@
         @if(Auth::user()->can('reportes'))
         <li class="@yield('reporte')"><a class="mili" href="{{url('/reporte')}}"><i class="fa fa-file-text-o"></i> REPORTES </a></li>
         <li class="@yield('grafico')"><a class="mili" href="{{url('/grafico')}}"><i class="fa fa-pie-chart"></i> GRAFICOS </a></li>
-        <li class="@yield('grafico')"><a class="mili" href="{{url('/grafico')}}"><i class="fa fa-circle-o"></i> OPTIMIZADOR CORTES </a></li>
+        <li class="@yield('corte')"><a class="mili" href="{{url('/corte')}}"><i class="fa fa-circle-o"></i> OPTIMIZADOR CORTES </a></li>
         @endif
-        
-        
 
-        
+
+
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -260,7 +260,7 @@
      @if (Session::has('exito'))
      {!! Html::script('principal/bower_components/jquery/dist/jquery.min.js') !!}
      <script type="text/javascript">
-       $(document).ready(function(){ 
+       $(document).ready(function(){
         $.notify({
           icon:'<i class="fa fa-check"></i> ',
           title:'<strong>EXITO!</strong></br>',
@@ -278,7 +278,7 @@
     @if (Session::has('error'))
     {!! Html::script('principal/bower_components/jquery/dist/jquery.min.js') !!}
     <script type="text/javascript">
-     $(document).ready(function(){ 
+     $(document).ready(function(){
       $.notify({
        icon:'<i class="fa fa-ban"></i> ',
        title:'<strong>ERROR!</strong></br>',
